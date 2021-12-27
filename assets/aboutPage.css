@@ -1,0 +1,44 @@
+/* About Page CSS Footer of about page */
+
+/* Navbar Sticky Position */
+#navbar{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.footer-about{
+    color: white;
+    display: flex;
+    padding:20px;
+    justify-content: space-around;
+    background-color: black;
+  }
+  .footer-about > div {
+    width: 25%;
+    margin: 10px;
+    font-size: 17px;
+  }
+  .footer-about div a{
+    font-size: 12px;
+    font-style: normal;
+    text-decoration: none;
+    color: rgba(179, 175, 175, 0.644);
+  }
+  .footer-about div p{
+    font-size: 12px;
+    font-style: normal;
+    text-decoration: none;
+    color: rgba(179, 175, 175, 0.644);
+  }
+  hr{
+    width: 98%;
+    border: 1.5px solid cyan;
+    border-radius: 10px;
+    margin: 0.3em auto;
+  }
+  .footer-about div div a img{
+    width:30px; 
+    height:30px; 
+    margin:5px;
+  }

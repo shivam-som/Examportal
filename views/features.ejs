@@ -1,0 +1,181 @@
+<%- include('common/nav')-%>
+
+<head>
+    <script>
+        function first() {
+            document.getElementById("3-types-of-exams").style.display = "block";
+            document.getElementById("supports-multiple-types-questions").style.display = "none";
+            document.getElementById("user-friendly-design").style.display = "none";
+            document.getElementById("mobile-friendly-platform").style.display = "none";
+        }
+        function second() {
+            document.getElementById("3-types-of-exams").style.display = "none";
+            document.getElementById("supports-multiple-types-questions").style.display = "block";
+            document.getElementById("user-friendly-design").style.display = "none";
+            document.getElementById("mobile-friendly-platform").style.display = "none";
+        }
+        function third() {
+            document.getElementById("3-types-of-exams").style.display = "none";
+            document.getElementById("supports-multiple-types-questions").style.display = "none";
+            document.getElementById("user-friendly-design").style.display = "block";
+            document.getElementById("mobile-friendly-platform").style.display = "none";
+        }
+        function fourth() {
+            document.getElementById("3-types-of-exams").style.display = "none";
+            document.getElementById("supports-multiple-types-questions").style.display = "none";
+            document.getElementById("user-friendly-design").style.display = "none";
+            document.getElementById("mobile-friendly-platform").style.display = "block";
+        }
+    </script>
+    <style>
+        .features-body .features-body-left a:hover {
+            background-color: rgba(255, 0, 0, 0.315);
+            border-radius: 20px;
+        }
+
+        #cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #loginScreen {
+            height: 380px;
+            width: 340px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            display: none;
+            background: url(../assets/images/login.png) no-repeat;
+            border: 5px solid #cccccc;
+            border-radius: 10px;
+        }
+
+        #loginScreen:target,
+        #loginScreen:target+#cover {
+            display: block;
+            opacity: 2;
+        }
+
+        .cancel {
+            display: block;
+            position: absolute;
+            top: 3px;
+            right: 2px;
+            background: rgb(245, 245, 245);
+            color: black;
+            height: 30px;
+            width: 35px;
+            font-size: 30px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('../assets/images/liquid-horse.jpg'); background-size: cover; backdrop-filter: blur(5px);">
+    
+    <div style="background-color: rgba(0, 0, 0, 0.349); color: white; height: 40px;">
+        <b style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 30px;">Features</b>
+        <b style="float: right;"><a href="index">Home</a><i style="color: skyblue;"> o </i>Features</b>
+    </div>
+    <div class="body-about w3-animate-top" style="text-align: center; animation-duration: 10s;">
+        <h1 style="color: skyblue;">Our <normal style="color: orange; font-size: 32px;">Features</normal>
+        </h1>
+        <img src="../assets/images/title-icon.png" alt="WELCOME">
+        <i>
+            <p style="font-size: 20px; color: white;">Have a Look in IMSEC online Exams Features</p>
+            <p style="font-size: 20px; color: white;">Welcome to IMSEC Online Exam Portal...</p>
+        </i>
+    </div><br>
+
+    <div class="features-body" style="width: 100%;">
+        <div class="features-body-left" style="width:25%; height:300px; margin-left:60px; margin-bottom: 50px; 
+                                                display: inline-block;">
+            <h1 style="color: skyblue; text-decoration: none;">More
+                <normal style="color: orange; font-size:32px;">Features</normal>
+            </h1>
+            <hr style="border: 1px solid rgba(19, 221, 248, 0.877); width: 30%; float: left; margin: 0.1em auto;">
+            <br><br>
+
+            <!-- <a href="#" onclick="javascript:functionNAME()"></a> -->
+            <a href="javascript:first()" style="font-size: 17px; color: white; text-decoration: none;
+                                padding: 15px;"><b>+ </b>3 Types of Exams</a>
+            <hr style="border: 1px dashed white; margin: 0.7em auto;">
+            <a href="javascript:second()" style="font-size: 17px; color: white; text-decoration: none;
+                                padding: 15px;"><b>+ </b>Supports Multiple Types Questions</a>
+            <hr style="border: 1px dashed white; margin: 0.7em auto;">
+            <a href="javascript:third()" style="font-size: 17px; color: white; text-decoration: none;
+                                padding: 15px;"><b>+ </b>User Friendly Design</a>
+            <hr style="border: 1px dashed white; margin: 0.7em auto;">
+            <a href="javascript:fourth()" style="font-size: 17px; color: white; text-decoration: none;
+                                padding: 15px;"><b>+ </b>Mobile Friendly Platform</a>
+            <hr style="border: 1px dashed white; margin: 0.7em auto;">
+            <br><br>
+        </div>
+
+        <div class="features-body-right" style="width: 60%; height: 250px; padding: 15px; margin-right: 60px;
+                                    padding-left: 50px; margin-bottom: 50px; display: inline-block; float: right;">
+            <div id="3-types-of-exams">
+                <h1 style="color: skyblue; text-decoration: none; font-family: Georgia, 'Times New Roman', 
+                                                                            Times, serif;">3 Types of Exams</h1>
+                <p style="font-style: normal; font-size: 15px; color: white;">
+                    Our Online Examination Platform will provide you 3 different styles of Exams, like:
+                </p>
+                <ol type="1" style="font-style: normal; font-size: 15px; color: white;">
+                    <li>Practice Exams</li>
+                    <li>Mock Exams</li>
+                    <li>Live Exams</li>
+                </ol>
+                <p style="font-style: normal; font-size: 15px; color: white;">
+                    This 3 Styles of examinations will helps the students to get more and more practice for
+                    their Final exams before taking it.
+                </p>
+            </div>
+            <div id="supports-multiple-types-questions" style="display: none;">
+                <h1 style="color: skyblue; text-decoration: none; font-family: Georgia, 'Times New Roman', 
+                                                        Times, serif;">Supports Multiple Types Questions</h1>
+                <p style="font-style: normal; font-size: 15px; color: white;">
+                    <br>
+                    Our IMSEC Online Exams supports Multiple Types Questions like: Multiple Choice Question, Match the
+                    following questions and Ture or False type of questions.
+                    <br><br>
+                    You can provide Image attachments (for Graphs,) for questions so that students will get more info
+                    about to the question.
+                </p>
+            </div>
+            <div id="user-friendly-design" style="display: none;">
+                <h1 style="color: skyblue; text-decoration: none; font-family: Georgia, 'Times New Roman', 
+                                                                    Times, serif;">User Friendly Design</h1>
+                <p style="font-style: normal; font-size: 15px; color: white;">
+                    <br>
+                    Our IMSEC Online Examination Portal is 100% User Friendly Design in Admin Panel,
+                    Student Login and as well as Front-End. exam writing screens were very High in Look & feel and also
+                    very easy to understand for the students with low Web knowledge.
+                </p>
+            </div>
+            <div id="mobile-friendly-platform" style="display: none;">
+                <h1 style="color: skyblue; text-decoration: none; font-family: Georgia, 'Times New Roman', 
+                                                                Times, serif;">Mobile Friendly Platform</h1>
+                <p style="font-style: normal; font-size: 15px; color: white;">
+                    <br>
+                    Our Online Examination Platform is Fully Mobile Friendly &
+                    Responsive Design, so that you need not to spend extra money for Mobile APP.
+                    In each and every screen of our platform has the fully responsive design.
+                    <br><br>
+                    Students can write exams in either Desktop, Tab or in Mobile Phones.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('common/foot')-%>
+</body>
+
+</html>

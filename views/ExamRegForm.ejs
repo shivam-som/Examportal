@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+    <title>FWRegistration</title>
+    <link rel="stylesheet" type="text/css" href="indexPage.css">
+    <script>
+        // These both statements are same or equal
+        // document.forms["myForm"]["fname"].value = document.getElementById("name").value
+        function isValidate() {
+            if (document.getElementById("name").value == "")
+                alert("Please fill all the required fields!!");
+            else if (document.getElementById("rollno").value == "")
+                alert("Please fill all the required fields!!");
+            else if (document.getElementById("email").value == "")
+                alert("Please fill all the required fields!!");
+            else if (document.getElementById("password").value == "")
+                alert("Please fill all the required fields!!");
+            else{
+                confirm("Are you sure to submit your details ??");
+                window.open("FWExam","_self");
+            }
+        }
+    </script>
+</head>
+
+<body style="background-image: url('../assets/images/FWRegFormImg.jpg');background-size: cover;">
+
+    <form action="Exam-first">
+        <button type="submit" style="float:left;">Back</button>
+    </form>
+
+    <h1 style="color: white; font-size: 300%; text-decoration: underline;">
+        <center>IMS Engineering College</center>
+    </h1>
+    <h2
+        style="color:white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-decoration: underline overline;">
+        <center>Online Exam Registration</center>
+    </h2><br>
+
+    <form style="margin: 0 auto; width:500px; font-size: 20px;" onsubmit="isValidate()">
+        <fieldset style="background-color: thistle;">
+            <legend style="background-color: gray; color: white; padding: 5px 10px;">Registration Form:</legend><br>
+
+            Student Name : <input type="text" id="name" name="name" title="Enter your full name"
+                placeholder="First Website"><br><br>
+
+            Roll No. : <input type="text" id="rollno" name="rollno" pattern="[0-9]{8}" placeholder="01234567"
+                title="Eight letters roll no."><br><br>
+
+            Gender : <input type="radio" name="gender" id="male" checked>Male
+            <input type="radio" name="gender" id="female">Female
+            <input type="radio" name="gender" id="other" disabled>Other<br><br>
+
+            <!-- Email:-characters followed by an @ sign, followed by more characters, and then a ".". 
+            After the "." sign, add at least 2 letters from a to z -->
+
+            Email : <input type="email" id="email" name="email" title="Enter your Email" placeholder="characters@domain"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+            Exam Id : <input type="text" name="examid" id="examid" placeholder="Enter Exam Id"
+                style="width: fit-content; height: 30px;"><br><br>
+                <!-- put it inside exam id to convert it to password -->
+                <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
+
+            Section : <select id="section" name="section">
+                <option value="cse1">3rd Year CSE 1</option>
+                <option value="cse2">3rd Year CSE 2</option>
+                <option value="cse3">3rd Year CSE 3</option>
+                <option value="cse4">3rd Year CSE 4</option>
+                <option value="nosection" selected>Select Section</option>
+            </select><br><br>
+
+            Date of Birth : <input type="date" id="birthday" name="birthday" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                placeholder="01-01-1999"><br><br>
+
+            <center>
+                <button type="submit">Submit</button>
+            </center>
+        </fieldset>
+    </form><br><br>
+</body>
+
+</html>

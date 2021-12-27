@@ -1,0 +1,79 @@
+<%- include('common/nav')-%>
+
+<head>
+    <script>
+        var i = 1;
+        var start = "../assets/images/girls-";
+        var extn = ".jpg";
+        function rightImage() {
+            if (i == 7) {
+                i = 0;
+            }
+            document.getElementById('fac-img-box-1').src = start.concat(i + 1, extn);
+            document.getElementById('fac-img-box-2').src = start.concat(i + 2, extn);
+            document.getElementById('fac-img-box-3').src = start.concat(i + 3, extn);
+            i = (i % 7) + 1;
+        }
+        function leftImage() {
+            document.getElementById('fac-img-box-1').src = start.concat(1, extn);
+            document.getElementById('fac-img-box-2').src = start.concat(2, extn);
+            document.getElementById('fac-img-box-3').src = start.concat(3, extn);
+        }
+    </script>
+</head>
+
+<body style="background-image: url('../assets/images/liquid-horse.jpg'); background-size: cover; backdrop-filter: blur(5px);">
+    <div style="background-color: rgba(0, 0, 0, 0.349); color: white; height: 40px;">
+        <b style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 30px;">Faculties</b>
+        <b style="float: right;"><a href="index">Home</a><i style="color: skyblue;"> o </i>About US</b>
+    </div>
+    <div class="body-about w3-animate-top" style="text-align: center; animation-duration: 10s;">
+        <h1 style="color: skyblue;">Faculties <normal style="color: orange; font-size: 32px;">IMSEC </normal>
+        </h1>
+        <img src="../assets/images/title-icon.png" alt="WELCOME">
+        <i>
+            <p style="font-size: 20px; color: white;">Let's take a Look to our Faculties Profiles</p>
+            <p style="font-size: 20px; color: white;">Welcome to IMSEC Online Exam Portal...</p>
+        </i>
+    </div>
+    <div class="body-gallery">
+        <button type="button" onclick="leftImage()"><</button>
+            <div class="gallery-container">
+                <div class="card" id="card1">
+                    <div class="img-box">
+                        <img src="../assets/images/girls-1.jpg" style="width: 100%;" id="fac-img-box-1">
+                    </div>
+                    <div class="content">
+                        <h2 style="color: yellow; font-family: serif">Anjali Sardana</h2>
+                        <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Sed delectus atque porro!</p>
+                    </div>
+                </div>
+                <div class="card" id="card2">
+                    <div class="img-box">
+                        <img src="../assets/images/girls-2.jpg" style="width: 100%;" id="fac-img-box-2">
+                    </div>
+                    <div class="content">
+                        <h2 style="color: yellow; font-family: serif">Dr.Suman</h2>
+                        <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Sed delectus atque porro!</p>
+                    </div>
+                </div>
+                <div class="card" id="card3">
+                    <div class="img-box">
+                        <img src="../assets/images/girls-3.jpg" style="width: 100%;" id="fac-img-box-3">
+                    </div>
+                    <div class="content">
+                        <h2 style="color: yellow; font-family: serif">Shruti Kesari</h2>
+                        <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Sed delectus atque porro!</p>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="rightImage()">></button>
+    </div><br><br>
+
+    <%- include('common/foot')-%>
+</body>
+
+</html>

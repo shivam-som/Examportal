@@ -1,0 +1,165 @@
+<%- include('common/nav')-%>
+
+<head>
+    <script>
+        var i = 1;
+        var start = "../assets/images/gallery-slide-img-";
+        var extn = ".jpg";
+
+        function right() {
+            // document.getElementById('img-box-2').src = "./images/gallery-slide-img-3.jpg";
+            if (i == 10) {
+                i = 0;
+            }
+            document.getElementById('img-box-1').src = start.concat(i + 1, extn);
+            document.getElementById('img-box-2').src = start.concat(i + 2, extn);
+            document.getElementById('img-box-3').src = start.concat(i + 3, extn);
+            i = (i % 10) + 1;
+        }
+        function left() {
+            document.getElementById('img-box-1').src = start.concat(1, extn);
+            document.getElementById('img-box-2').src = start.concat(2, extn);
+            document.getElementById('img-box-3').src = start.concat(3, extn);
+        }
+
+        // Video editing buttons
+        var j = 5;
+        var vs = "../assets/videos/sv";
+        var ve = ".mp4";
+        function videoBtnRight() {
+            if (j == 13) {
+                j = 1;
+            }
+            document.getElementById('gvdfsi1').src = vs.concat(j, ve);
+            document.getElementById('gvdfsi2').src = vs.concat(j + 1, ve);
+            document.getElementById('gvdfsi3').src = vs.concat(j + 2, ve);
+            document.getElementById('gvdfsi4').src = vs.concat(j + 3, ve);
+            j = j + 4;
+        }
+        var k = 12;
+        function videoBtnLeft() {
+            if (k == 0) {
+                k = 12;
+            }
+            document.getElementById('gvdfsi1').src = vs.concat(k - 3, ve);
+            document.getElementById('gvdfsi2').src = vs.concat(k - 2, ve);
+            document.getElementById('gvdfsi3').src = vs.concat(k - 1, ve);
+            document.getElementById('gvdfsi4').src = vs.concat(k, ve);
+            k = k - 4;
+        }
+
+        function gvdfsb1() {
+            document.getElementById('gvouter').src = document.getElementById('gvdfsi1').src;
+            document.getElementById('gvouter').play();
+        }
+        function gvdfsb2() {
+            document.getElementById('gvouter').src = document.getElementById('gvdfsi2').src;
+            document.getElementById('gvouter').play();
+        }
+        function gvdfsb3() {
+            document.getElementById('gvouter').src = document.getElementById('gvdfsi3').src;
+            document.getElementById('gvouter').play();
+        }
+        function gvdfsb4() {
+            document.getElementById('gvouter').src = document.getElementById('gvdfsi4').src;
+            document.getElementById('gvouter').play();
+        }
+
+    </script>
+</head>
+
+<body
+    style="background-image: url('../assets/images/liquid-horse.jpg'); background-size: cover; backdrop-filter: blur(5px);">
+
+    <div style="background-color: rgba(0, 0, 0, 0.349); color: white; height: 40px;">
+        <b style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 30px;">Gallery</b>
+        <b style="float: right;"><a href="index">Home</a><i style="color: skyblue;"> o </i>Gallery</b>
+    </div>
+    <div class="body-about" style="text-align: center;">
+        <h1 style="color: orange;">Gallery</h1>
+        <img src="../assets/images/title-icon.png" alt="WELCOME">
+        <i>
+            <p style="font-size: 20px; color: white;">Welcome to IMSEC Online Exam Portal...</p>
+        </i>
+    </div><br><br>
+
+    <div>
+        <center>
+            <h1 style="background-color: rgb(16, 25, 105); text-decoration: none; padding: 10px;font-size: 40px;
+                        color: white; border: 4px double white; width: fit-content; border-radius: 5px;">
+                PHOTOS</h1>
+        </center>
+    </div><br>
+
+    <div class="body-gallery">
+        <button type="button" onclick="left()">
+            <</button>
+                <div class="gallery-container">
+                    <div class="card" id="card1">
+                        <div class="img-box">
+                            <img src="../assets/images/gallery-slide-img-1.jpg" id="img-box-1">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: yellow; font-family: serif">Card one</h2>
+                            <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Sed delectus atque porro!</p>
+                        </div>
+                    </div>
+                    <div class="card" id="card2">
+                        <div class="img-box">
+                            <img src="../assets/images/gallery-slide-img-2.jpg" id="img-box-2">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: yellow; font-family: serif">Card two</h2>
+                            <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Sed delectus atque porro!</p>
+                        </div>
+                    </div>
+                    <div class="card" id="card3">
+                        <div class="img-box">
+                            <img src="../assets/images/gallery-slide-img-3.jpg" id="img-box-3">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: yellow; font-family: serif">Card three</h2>
+                            <p style="color: white; font-family: serif">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Sed delectus atque porro!</p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="right()">></button>
+    </div><br><br>
+
+    <div>
+        <center>
+            <h1 style="background-color: rgb(16, 25, 105); text-decoration: none; padding: 10px;font-size: 40px;
+                        color: white; border: 4px double white; width: fit-content; border-radius: 5px;">
+                VIDEOS</h1>
+        </center>
+    </div><br><br>
+
+    <div class="gallery-video-outer" style="position: relative;">
+        <video id="gvouter" src="../assets/videos/sv1.mp4" width="80%" height="auto;" style="margin-left: 10%; 
+                                                border:10px double black;" controls></video>
+        <button style="left: 0px;" onclick="videoBtnLeft()">
+            <</button>
+                <button style="right:0px;" onclick="videoBtnRight()">></button>
+                <div class="gallery-video-down-flex" style="display: flex; background-color: black;">
+                    <div class="gvdfsc" style="cursor: pointer;" onclick="gvdfsb1()">
+                        <video id="gvdfsi1" src="../assets/videos/sv1.mp4"></video>
+                    </div>
+                    <div class="gvdfsc" style="cursor: pointer;" onclick="gvdfsb2()">
+                        <video id="gvdfsi2" src="../assets/videos/sv2.mp4"></video>
+                    </div>
+                    <div class="gvdfsc" style="cursor: pointer;" onclick="gvdfsb3()">
+                        <video id="gvdfsi3" src="../assets/videos/sv3.mp4"></video>
+                    </div>
+                    <div class="gvdfsc" style="cursor: pointer;" onclick="gvdfsb4()">
+                        <video id="gvdfsi4" src="../assets/videos/sv4.mp4"></video>
+                    </div>
+                </div>
+    </div>
+
+    <%- include('common/foot')-%>
+</body>
+
+</html>

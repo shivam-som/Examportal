@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Imsec Online Exams</title>
+    <!-- Adding External css file -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../assets/indexPage.css">
+    <link rel="stylesheet" type="text/css" href="../assets/aboutPage.css">
+    <link rel="stylesheet" type="text/css" href="../assets/galleryPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- this is included to include sweetalert impact -->
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
+</head>
+
+<body>
+    <div class="navbar uppernav">
+        <a href="javascript:register()"><i class="fa fa-fw fa-sign-in"></i>Register</a>
+        <a href="javascript:login()"><i class="fa fa-fw fa-sign-in"></i>Login</a>
+        <a href="clgCalc">Calculator</a>
+        <a href="#mail">imsec@imsec.ac.in</a>
+        <a href="#phone">(+91)120-7945555</a>
+    </div>
+    <!-- Add Login Popup page  -->
+    <div id="modal-wrapper" class="modal">
+        <form class="modal-content animate" action="/sign_up" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close"
+                    title="Close login">&times;</span>
+                <img src="../assets/images/userImage.png" alt="Avatar" class="avatar"><br>
+                <center>
+                    <div id="modal-btns" style="background-color:aqua; width: 90%; border-radius: 5px;">
+                        <button type="button" style="width: 43%; margin: 10px 0px; border: none;"
+                            onclick="login()">Login</button>
+                        <button type="button" style="width: 43%; margin: 10px 0px; border: none;"
+                            onclick="register()">Register</button>
+                    </div>
+                </center>
+            </div>
+            <!-- Container for login popup -->
+            <div class="container" id="container-1" class="w3-animate-left" style="animation-duration: 15s;">
+                <input type="text" placeholder="Enter Username" name="username">
+                <input type="password" placeholder="Enter Password" name="password">
+                <button type="button" onclick="newLogin()">Login</button>
+                <input type="checkbox" style="margin:26px 30px;"> Remember me
+                <a href="#" style="text-decoration:underline; float:right; margin-right:34px; margin-top:26px;">
+                    Forgot Password ?</a>
+            </div>
+            <!-- Container for Register popup -->
+            <div class="container" id="container-2">
+                <input type="text" placeholder="Enter Username" name="rname">
+                <input type="number" pattern="[0-9]{10}" placeholder="Enter Mobile" name="rmob">
+                <input type="text" placeholder="Enter College" name="rclg">
+                <select name="rcity" id="r-city">
+                    <option value="enter-city">Select City</option>
+                    <option value="agra">Agra</option>
+                    <option value="alahabad">Alahabad</option>
+                    <option value="aligarh">Aligarh</option>
+                    <option value="banaras">Banaras</option>
+                    <option value="bareily">Bareily</option>
+                    <option value="ghaziabad">Ghaziabad</option>
+                    <option value="gorakhpur">Gorakhpur</option>
+                    <option value="meerut">Meerut</option>
+                    <option value="nainital">Nainital</option>
+                    <option value="haridwar">Haridwar</option>
+                    <option value="alahabad">Alahabad</option>
+                    <option value="ghaziabad">Ghaziabad</option>
+                    <option value="gorakhpur">Gorakhpur</option>
+                    <option value="meerut">Meerut</option>
+                    <option value="nainital">Nainital</option>
+                    <option value="haridwar">Haridwar</option>
+                </select>
+                <input type="email" placeholder="Enter Email" name="rmail">
+                <input type="password" placeholder="Enter Password" name="rpsw">
+                <button type="submit" onclick="sweetalertclick()">Register</button>
+                <center style="margin-top: 10px;">
+                    Already have a account !
+                    <a href="javascript:login()" style="text-decoration:underline; margin-top:26px;">Login Here</a>
+                </center>
+            </div>
+        </form>
+    </div>
+    <!-- second  navigation bar -->
+    <div class="navbar" id="navbar">
+        <a href="contact"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
+        <a href="gallery"><i class="fa fa-fw fa-image"></i>Gallery</a>
+        <a href="blog"><i class="fa fa-fw fa-bell"></i>Blog</a>
+        <a href="news"><i class="fa fa-fw fa-newspaper-o"></i>News</a>
+        <a href="articles"><i class="fa fa-fw fa-book"></i>Articles</a>
+        <a href="Exam-first"><i class="fa fa-fw fa-pencil"></i>Exams</a>
+        <a href="features"><i class="fa fa-fw fa-asterisk"></i>Features</a>
+        <a href="faculties"><i class="fa fa-fw fa-user"></i>Faculties</a>
+        <a href="about"><i class="fa fa-fw fa-address-book"></i>About</a>
+        <a href="index"><i class="fa fa-fw fa-home"></i>Home</a>
+    </div>
+
+    <!-- this is included to include sweetalert impact -->
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        function login() {
+            document.getElementById('modal-wrapper').style.display = 'block';
+            document.getElementById('container-2').style.display = "none";
+            document.getElementById('container-1').style.display = 'block';
+        }
+        function newLogin() {
+            window.open("teachers_login","_self");
+        }
+        function sweetalertclick() {
+            alert("You are successfully registered!! \n Press Login to Login!!")
+                // Swal.fire('Hello world!')
+
+                // Swal.fire('Oops...', 'Something went wrong!', 'error')
+
+            //     Swal.fire({
+            //         title: 'You are Successfully Registered',
+            //         text: 'Press Login for instant Login!!',
+            //         // warning, error, info, success
+            //         icon: 'success',
+            //         showCancelButton: true,
+            //         confirmButtonText: 'Login Now!',
+            //         cancelButtonText: 'Login Later!'
+            //     }).then((result) => {
+            //         if (result.value) {
+            //             Swal.fire(
+            //                 'Login Successful :)',
+            //                 'You are logedIn as an Examiner !!',
+            //                 'success'
+            //             );
+            //             window.open("teachers_login","_self");
+            //         } else if (result.dismiss === Swal.DismissReason.cancel) {
+            //             Swal.fire(
+            //                 'Login Later !!',
+            //                 'You can Login using your login Details',
+            //                 'info'
+            //             );
+            //             window.open("index","_self");
+            //         }
+            //     })
+            }
+        // If user clicks anywhere outside of the modal, Modal will close
+        var modal = document.getElementById('modal-wrapper');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function register() {
+            document.getElementById('modal-wrapper').style.display = 'block';
+            document.getElementById('container-1').style.display = "none";
+            document.getElementById('container-2').style.display = 'block';
+        }
+        // If user clicks anywhere outside of the modal, Modal will close
+        var modal = document.getElementById('modal-wrapper');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
